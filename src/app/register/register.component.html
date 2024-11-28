@@ -1,11 +1,39 @@
-<form (ngSubmit)="register()">
-    <label>
-      Username:
-      <input [(ngModel)]="registerData.username" name="username">
-    </label>
-    <label>
-      Password:
-      <input [(ngModel)]="registerData.password" name="password" type="password">
-    </label>
-    <button type="submit">Register</button>
-  </form>
+<div class="register-container">
+  <div class="register-card">
+    <h2>Crear una Cuenta</h2>
+    <p>Regístrate para acceder a todas las funcionalidades de nuestra plataforma.</p>
+    <form (ngSubmit)="register()">
+      <div class="form-group">
+        <label for="username">Usuario</label>
+        <input
+          id="username"
+          type="text"
+          placeholder="Ingresa tu usuario"
+          [(ngModel)]="registerData.username"
+          name="username"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="password">Contraseña</label>
+        <input
+          id="password"
+          type="password"
+          placeholder="Crea una contraseña segura"
+          [(ngModel)]="registerData.password"
+          name="password"
+          required
+        />
+      </div>
+      <button type="submit" class="btn-submit">Registrar</button>
+    </form>
+    <p class="terms">
+      Al registrarte, aceptas los <a href="#">Términos y Condiciones</a> y nuestra <a href="#">Política de Privacidad</a>.
+    </p>
+    <div class="separator">o</div>
+    <button class="btn-google">Registrarse con Google</button>
+    <p class="login-link">
+      ¿Ya tienes una cuenta? <a href="/login">Inicia sesión</a>
+    </p>
+  </div>
+</div>

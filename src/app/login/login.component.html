@@ -1,13 +1,42 @@
-<form (ngSubmit)="login()">
-    <label>
-      Username:
-      <input [(ngModel)]="loginData.username" name="username">
-    </label>
-    <label>
-      Password:
-      <input [(ngModel)]="loginData.password" name="password" type="password">
-    </label>
-    <button type="submit">Login</button>
-  </form>
-  
-
+<div class="login-container">
+  <div class="login-card">
+    <h2>Iniciar Sesión</h2>
+    <p>Accede a tu cuenta</p>
+    <form (ngSubmit)="login()">
+      <div class="form-group">
+        <label for="username">Usuario o Correo Electrónico</label>
+        <input
+          id="username"
+          type="text"
+          placeholder="Ingresa tu usuario"
+          [(ngModel)]="loginData.username"
+          name="username"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="password">Contraseña</label>
+        <input
+          id="password"
+          type="password"
+          placeholder="Ingresa tu contraseña"
+          [(ngModel)]="loginData.password"
+          name="password"
+          required
+        />
+      </div>
+      <button type="submit" class="btn-submit">Iniciar Sesión</button>
+    </form>
+    <div class="extra-options">
+      <label>
+        <input type="checkbox"> Mantenerme conectado
+      </label>
+      <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+    </div>
+    <div class="separator">o</div>
+    <button class="btn-google">Inicia sesión con Google</button>
+    <p class="register-link">
+      ¿No tienes cuenta? <a href="/register">Regístrate aquí</a>
+    </p>
+  </div>
+</div>
